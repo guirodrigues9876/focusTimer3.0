@@ -1,0 +1,20 @@
+body.dark-theme {
+    color: var(--fc-text-dark);
+    background-color: var(--bg-dark);
+}
+
+body.dark-theme .card{
+    background-color: var(--bg-card-off-dark);
+}
+
+body.dark-theme svg path{
+    fill: var(--ic-primary-dark);
+}
+
+body.dark-theme .card-on{
+    background-color: var(--bg-card-on-dark);
+}
+
+body.dark-theme .card-on path{
+    fill: var(--ic-secondary);
+}

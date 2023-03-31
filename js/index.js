@@ -19,7 +19,6 @@ import Timer from "./timer.js"
 
 const sound = Sounds()
 
-
 const controls = Controls(
     buttonPlay,
     buttonStop,

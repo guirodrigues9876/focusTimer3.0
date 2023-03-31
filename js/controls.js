@@ -6,6 +6,18 @@ export default function Controls({
 
     // const forestCardOn = document.querySelector('.forest')
 
+    function toggleTheme(){
+        document.querySelector('body').classList.toggle('dark-theme')
+        document.querySelector('.moon').classList.toggle('hide')
+        document.querySelector('.sun').classList.toggle('hide')
+
+    }
+
+    function togglePlayPause(){
+        document.querySelector('button.play').classList.toggle('hide')
+        document.querySelector('button.pause').classList.toggle('hide')
+    }
+
     function forestCardActive(){
 
         buttonForest.classList.toggle('card-on')
@@ -46,6 +58,8 @@ export default function Controls({
         forestCardActive,
         rainCardActive,
         coffeeCardActive,
-        fireCardActive
+        fireCardActive,
+        toggleTheme,
+        togglePlayPause
     }
 }

@@ -1,5 +1,3 @@
-
-
 export default function Timer({
     minutesDisplay,
     secondsDisplay
@@ -7,7 +5,8 @@ export default function Timer({
 
     let timerTimeOut
     let minutes = Number(minutesDisplay.textContent)
-
+    let itsOn = false
+    console.log('declaração ' + itsOn)
 
     function updateDisplay(newMinutes, seconds){
         newMinutes = newMinutes === undefined ? minutes : newMinutes
@@ -25,6 +24,8 @@ export default function Timer({
     
         timerTimeOut = setTimeout(function(){
             
+            itsOn = true
+            console.log('To no timer' + itsOn);
             let seconds = Number(secondsDisplay.textContent)
             let minutes = Number(minutesDisplay.textContent)
             let isFinished = minutes <= 0 && seconds <=0
@@ -32,6 +33,7 @@ export default function Timer({
             updateDisplay(minutes, 0)
             
             if(isFinished){
+                // itsOn = false
                 return
             }
             
@@ -49,13 +51,17 @@ export default function Timer({
     }
     
     function addMinutes(){
+        let Ismax = minutes === 60
+        if(Ismax){
+            return
+        }
         minutes = minutes + 5
         updateDisplay(minutes)
     }
 
     function removeMinutes(){
-        let Iszero = minutes <= 0
-        if(Iszero){
+        let Ismin = minutes === 5
+        if(Ismin){
             return
         }
         minutes = minutes -5
@@ -63,8 +69,19 @@ export default function Timer({
     }
 
     function hold(){
-        clearTimeout(timerTimeOut)
-        itsOn = false
+        if(itsOn){
+            clearTimeout(timerTimeOut)
+            // controls.togglePlayPause()
+
+            // itsOn = false
+            console.log(itsOn)
+        }
+        return
+    }
+
+    function resetTimer(){
+
+        updateDisplay(5,0)
     }
 
     return{
@@ -75,6 +92,8 @@ export default function Timer({
         removeMinutes,
         hold,
         Timer,
+        resetTimer,
+        itsOn
     }
 
 }

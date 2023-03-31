@@ -5,83 +5,87 @@
 }
 
 :root{
+    --fc-text: #323238;
+    --fc-text-dark: #fff;
 
-    --bt-color: #E1E1E6;
-    --bt: #02799D:
-    --tt-selected-color: #FFFFFF;
-    --text-color: #323238;
+    --ic-primary: #323238;
+	--ic-secondary: #fff;
+	--ic-primary-dark: #c4c4cc;
+
+    --bg-card-off: #e1e1e6;
+    --bg-card-off-dark: #29292e;
+
+    --bg-card-on: #02799d;
+	--bg-card-on-dark: #0a3442;
+
+    --bg-dark: #121214;
 
     font-size: 62.5%;
 }
 
 body{
-
-    display:grid;
-    place
+    color: var(--ic-primary);
 }
 
 main{
-
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 19.2rem;
-
     margin-top: 19.6rem;
-    
+}
+
+.switch{
+    position: absolute;
+    top: 4rem;
+    right: 4rem;
+}
+
+.switch button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.hide{
+    display: none;
 }
 
 #timer{
-    text-align: center;
+    justify-content: center;
 }
 
-.displayTimer span{
-
+.display-timer span{
     font-family: 'Roboto', sans-serif;
     font-size: 12.6rem;
-
 }
 
 .controls{
-
     display: flex;
     gap: 4.0rem;
-
 }
 
 .controls button{
     background-color: transparent;
     border: none;
-
     cursor: pointer;
 }
 
-#sounds{
-    display: flex;
-    flex-direction: column;
+.sound-cards{
+    display: grid;
+    grid-template-columns: 50% 50%;
     gap: 3.2rem;
 }
 
-.soundCards{
-    display: flex;
-    gap: 3.2rem;
-}
-
-.soundCards button{
-
+.sound-cards button{
     width: 13.8rem;
     height: 15.2rem;
-
-    background-color: var(--bt-color);
     border: none;
     border-radius: 2.4rem;
-
+    background-color: var(--bg-card-off);
     cursor: pointer;
 }
 
-.soundCards .card-on{
-
-    background-color: #02799D;
-    
-
+.sound-cards .card-on{
+    background-color: var(--bg-card-on);
 } 
