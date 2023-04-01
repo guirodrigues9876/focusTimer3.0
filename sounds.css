@@ -1,0 +1,76 @@
+.sound-cards{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 3.2rem;
+}
+
+.sound-cards button{
+    width: 13.8rem;
+    height: 15.2rem;
+    border: none;
+    border-radius: 2.4rem;
+    background-color: var(--bg-card-off);
+    cursor: pointer;
+}
+
+.sound-cards .card-on{
+    background-color: var(--bg-card-on);
+} 
+
+.card .volume{
+    width: 80%;
+    height: 0.5rem;
+
+    cursor:pointer;
+    outline: none;
+    appearance: none;
+	-webkit-appearance: none;
+
+    border-radius: 0.5rem;
+    background-color: var(--ic-primary);
+
+}
+
+.card .volume:focus{
+    outline: none;
+}
+
+/*webkit*/
+.card .volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--ic-primary);
+    border: none;
+  }
+
+  .card .volume::-webkit-slider-thumb:active {
+    background: white;
+}
+
+/*mozilla*/
+.card .volume::-moz-range-thumb{
+
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--ic-primary);
+    border: none;
+}
+
+/* MS */
+.card.card-on .volume::-ms-thumb {
+    -webkit-appearance: none;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--ic-primary);
+    border: none;
+}
+
+
+.card.card-on .volume::-webkit-slider-thumb {
+    background: var(--ic-secondary);
+}

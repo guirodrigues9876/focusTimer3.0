@@ -12,9 +12,11 @@ import {
     buttonFire,
     volumeForest
 } from './elements.js'
+import sounds from './sounds.js'
 
 
 let isPlaying = false
+let started = false
 
 export default function ({controls, timer, sound}){
 
@@ -35,31 +37,43 @@ export default function ({controls, timer, sound}){
     })
 
     buttonPlay.addEventListener("click", function (){
-        console.log("To no play " + timer.itsOn);
+
+        sound.pressButton()
+
+        started = true
+        console.log("Button play " + timer.itsOn);
         timer.countDown()
         controls.togglePlayPause()
         console.log("Final do play " + timer.itsOn);
     })
 
     buttonPause.addEventListener("click", function (){
+        sound.pressButton()
+
         timer.hold()
         controls.togglePlayPause()
     })
     
     buttonStop.addEventListener("click", function (){
-        console.log("To no event " + timer.itsOn);
-        if(timer.itsOn){
+        sound.pressButton()
+
+        if(started){
             controls.togglePlayPause()
         }
         timer.hold()
         timer.resetTimer()
+        started = false
     })
     
     buttonPlus.addEventListener("click", function (){
+        sound.pressButton()
+
         timer.addMinutes()
     })
     
     buttonMinus.addEventListener("click", function (){
+        sound.pressButton()
+
         timer.removeMinutes()
     })   
     

@@ -24,7 +24,6 @@ export default function Timer({
     
         timerTimeOut = setTimeout(function(){
             
-            itsOn = true
             console.log('To no timer' + itsOn);
             let seconds = Number(secondsDisplay.textContent)
             let minutes = Number(minutesDisplay.textContent)
@@ -69,13 +68,13 @@ export default function Timer({
     }
 
     function hold(){
-        if(itsOn){
+        // if(itsOn){
             clearTimeout(timerTimeOut)
             // controls.togglePlayPause()
 
             // itsOn = false
-            console.log(itsOn)
-        }
+            // console.log(itsOn)
+        // }
         return
     }
 

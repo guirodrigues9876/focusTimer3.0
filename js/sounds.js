@@ -1,5 +1,7 @@
 export default function(){
 
+
+    const buttonPressAudio = new Audio("https://github.com/maykbrito/automatic-video-creator/blob/master/audios/button-press.wav?raw=true")
     const forest = new Audio("./sounds/Floresta.wav")
     const rain = new Audio("./sounds/Chuva.wav")
     const coffee = new Audio("./sounds/Cafeteria.wav")
@@ -25,6 +27,10 @@ export default function(){
             whoIsPlaying = audio.src
         } 
 
+    }
+
+    function pressButton(){
+        buttonPressAudio.play()
     }
     
     function forestAudioStart(audio){
@@ -70,7 +76,8 @@ export default function(){
         forestAudioStart,
         rainAudioStart,
         setVolume,
-        audioStartPause
+        audioStartPause,
+        pressButton
     }
 
 }

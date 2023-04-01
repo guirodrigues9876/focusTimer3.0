@@ -70,22 +70,3 @@ main{
     border: none;
     cursor: pointer;
 }
-
-.sound-cards{
-    display: grid;
-    grid-template-columns: 50% 50%;
-    gap: 3.2rem;
-}
-
-.sound-cards button{
-    width: 13.8rem;
-    height: 15.2rem;
-    border: none;
-    border-radius: 2.4rem;
-    background-color: var(--bg-card-off);
-    cursor: pointer;
-}
-
-.sound-cards .card-on{
-    background-color: var(--bg-card-on);
-} 
