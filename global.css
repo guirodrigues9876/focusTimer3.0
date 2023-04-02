@@ -25,6 +25,7 @@
 
 body{
     color: var(--ic-primary);
+    transition: background 0.5s ease;
 }
 
 main{

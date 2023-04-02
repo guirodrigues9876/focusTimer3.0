@@ -3,6 +3,7 @@ body.dark-theme {
     background-color: var(--bg-dark);
 }
 
+/* cards */
 body.dark-theme .card{
     background-color: var(--bg-card-off-dark);
 }
@@ -11,6 +12,7 @@ body.dark-theme svg path{
     fill: var(--ic-primary-dark);
 }
 
+/* cards on */
 body.dark-theme .card-on{
     background-color: var(--bg-card-on-dark);
 }
@@ -18,3 +20,20 @@ body.dark-theme .card-on{
 body.dark-theme .card-on path{
     fill: var(--ic-secondary);
 }
+
+/* volume */
+body.dark-theme .card .volume{
+    background-color: var(--ic-secondary);
+}
+
+/* webkit*/
+body.dark-theme .card .volume::-webkit-slider-thumb {
+    background: var(--ic-secondary);
+}
+
+/*mozilla*/
+body.dark-theme .card .volume::-moz-range-thumb{
+    background: var(--ic-secondary);
+}
+
+

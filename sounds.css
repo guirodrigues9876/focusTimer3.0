@@ -1,3 +1,4 @@
+/* Cards grid */
 .sound-cards{
     display: grid;
     grid-template-columns: 50% 50%;
@@ -11,11 +12,19 @@
     border-radius: 2.4rem;
     background-color: var(--bg-card-off);
     cursor: pointer;
+    transition: background 0.5s ease;
 }
 
+/* Cards on */
 .sound-cards .card-on{
     background-color: var(--bg-card-on);
 } 
+
+.sound-cards .card-on svg path{
+    fill: var(--ic-secondary);
+}
+
+/* Volume */
 
 .card .volume{
     width: 80%;
@@ -28,14 +37,10 @@
 
     border-radius: 0.5rem;
     background-color: var(--ic-primary);
-
 }
 
-.card .volume:focus{
-    outline: none;
-}
-
-/*webkit*/
+/* Thumb slider */
+/* webkit*/
 .card .volume::-webkit-slider-thumb {
     -webkit-appearance: none;
     width: 1.6rem;
@@ -45,11 +50,7 @@
     border: none;
   }
 
-  .card .volume::-webkit-slider-thumb:active {
-    background: white;
-}
-
-/*mozilla*/
+/*Mozilla*/
 .card .volume::-moz-range-thumb{
 
     -webkit-appearance: none;
@@ -60,17 +61,17 @@
     border: none;
 }
 
-/* MS */
-.card.card-on .volume::-ms-thumb {
-    -webkit-appearance: none;
-    width: 1.6rem;
-    height: 1.6rem;
-    border-radius: 50%;
-    background: var(--ic-primary);
-    border: none;
+/* Volume card on */
+.card.card-on .volume{
+    background: var(--ic-secondary);
 }
 
-
+/*webkit*/
 .card.card-on .volume::-webkit-slider-thumb {
+    background: var(--ic-secondary);
+}
+
+/*Mozilla*/
+.card.card-on .volume::-moz-range-thumb{
     background: var(--ic-secondary);
 }
