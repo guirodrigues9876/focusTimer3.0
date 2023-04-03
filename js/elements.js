@@ -14,6 +14,10 @@ const buttonRain = document.querySelector('#card-rain')
 const buttonCoffee = document.querySelector('#card-store')
 const buttonFire = document.querySelector('#card-fireplace')
 const volumeForest = document.querySelector('#card-forest .volume')
+const volumeRain = document.querySelector('#card-rain .volume')
+const volumeCoffee = document.querySelector('#card-store .volume')
+const volumeFireplace = document.querySelector('#card-fireplace .volume')
+
 
 export {
     buttonSun,
@@ -29,5 +33,8 @@ export {
     buttonRain,
     buttonCoffee,
     buttonFire,
-    volumeForest
+    volumeForest,
+    volumeRain,
+    volumeCoffee,
+    volumeFireplace
 }

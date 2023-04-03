@@ -64,6 +64,7 @@ main{
 .controls{
     display: flex;
     gap: 4.0rem;
+    justify-content: space-between;
 }
 
 .controls button{

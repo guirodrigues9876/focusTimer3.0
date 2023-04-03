@@ -10,7 +10,10 @@ import {
     buttonRain,
     buttonCoffee,
     buttonFire,
-    volumeForest
+    volumeForest,
+    volumeRain,
+    volumeCoffee,
+    volumeFireplace
 } from './elements.js'
 import sounds from './sounds.js'
 
@@ -19,39 +22,35 @@ let isPlaying = false
 let started = false
 
 export default function ({controls, timer, sound}){
-
-    document.querySelector(".input")
-
-    volumeForest.addEventListener("input", function(){
-        let audio = sound.forest;
-        let volume = volumeForest.value;
-        sound.setVolume(audio, volume);
-    })
-
+    
+    // Theme Button
     buttonSun.addEventListener("click", function(){
         controls.toggleTheme()
     })
-
+    
     buttonMoon.addEventListener("click", function(){
         controls.toggleTheme()
     })
 
+    // Controls timer buttons
     buttonPlay.addEventListener("click", function (){
-
+        
         sound.pressButton()
-
+        
         started = true
         console.log("Button play " + timer.itsOn);
         timer.countDown()
         controls.togglePlayPause()
         console.log("Final do play " + timer.itsOn);
     })
-
+    
     buttonPause.addEventListener("click", function (){
         sound.pressButton()
 
+        if(started){
+            controls.togglePlayPause()
+        }
         timer.hold()
-        controls.togglePlayPause()
     })
     
     buttonStop.addEventListener("click", function (){
@@ -67,16 +66,16 @@ export default function ({controls, timer, sound}){
     
     buttonPlus.addEventListener("click", function (){
         sound.pressButton()
-
+        
         timer.addMinutes()
     })
     
     buttonMinus.addEventListener("click", function (){
         sound.pressButton()
-
         timer.removeMinutes()
-    })   
-    
+    }) 
+
+    // Card buttons
     buttonForest.addEventListener("click", function (){
         controls.forestCardActive()
         sound.reset()
@@ -90,20 +89,6 @@ export default function ({controls, timer, sound}){
         sound.audioStartPause(sound.rain)
     
     })
-
-
-
-    volumeForest.addEventListener("input", function(){
-        let audio = sound.forest;
-        let volume = volumeForest.value;
-        sound.setVolume(audio, volume);
-    })
-
-    // volumeForest.addEventListener("input", function(){
-    //     let audio = sound.forest;
-    //     let volume = volumeForest.value;
-    //     sound.setVolume(audio, volume);
-    // })
     
     buttonCoffee.addEventListener("click", function (){
         
@@ -116,10 +101,8 @@ export default function ({controls, timer, sound}){
             sound.coffee.play()
             isPlaying = true
         } 
-    
+        
     })
-
-
     
     buttonFire.addEventListener("click", function (){
         
@@ -135,5 +118,28 @@ export default function ({controls, timer, sound}){
     
     })
 
-
+    // Volume card buttons
+    volumeForest.addEventListener("input", function(){
+        let audio = sound.forest;
+        let volume = volumeForest.value;
+        sound.setVolume(audio, volume);
+    })
+    
+    volumeRain.addEventListener("input", function(){
+        let audio = sound.rain;
+        let volume = volumeRain.value;
+        sound.setVolume(audio, volume);
+    })
+    
+    volumeCoffee.addEventListener("input", function(){
+        let audio = sound.coffee;
+        let volume = volumeCoffee.value;
+        sound.setVolume(audio, volume);
+    })
+    
+    volumeFireplace.addEventListener("input", function(){
+        let audio = sound.fireplace;
+        let volume = volumeFireplace.value;
+        sound.setVolume(audio, volume);
+    })
 }
